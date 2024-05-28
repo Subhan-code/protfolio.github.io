@@ -9,7 +9,232 @@
     --b: 50px/60px var(--f);
     --p: 18px/30px var(--f);
 }
-
+:root {
+    /* Colors */
+    --primary-color: #273528;
+    --secondary-color: #192219;
+    --third-color: #352827;
+    --link-color: #030303;
+    /* Easing */
+    --easing: cubic-bezier(0.69, 0.04, 0.15, 0.98);
+    /* Fonts */
+    --primary-font: "Libre Baskerville", serif;
+  }
+ 
+  body::after {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 3;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Loader */
+  .loader {
+    background: #ffffff;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    animation: loader 1s 4s both;
+  }
+  
+  @keyframes loader {
+    0% {
+      opacity: 1;
+      z-index: 100;
+    }
+    99.99% {
+      opacity: 0;
+      z-index: 100;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+      z-index: -1;
+    }
+  }
+  .loader-txt { 
+    color: #000;
+    display: block;
+    overflow: hidden;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    font-family: var(--primary-font) Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+  }
+  
+  .loader-txt > span {
+    display: inline-block;
+    padding: 8px 0;
+  }
+  
+  .loader-name {
+    font-size: 2.4rem;
+    position: relative;
+  }
+  
+  .loader-name::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    transform-origin: left center;
+    animation: loadingBar 2s var(--easing) both;
+  }
+  
+  @keyframes loadingBar {
+    0% {
+      transform: scaleX(0);
+      transform-origin: left center;
+    }
+    33.3% {
+      transform: scaleX(1);
+      transform-origin: left center;
+    }
+    66.6% {
+      transform: scaleX(1);
+      transform-origin: left center;
+    }
+    66.61% {
+      transform: scaleX(1);
+      transform-origin: right center;
+    }
+    100% {
+      transform: scaleX(0);
+      transform-origin: right center;
+    }
+  }
+  .loader-name > span {
+    animation: loaderName 1.5s 1s var(--easing) both;
+  }
+  
+  .loader-website > span {
+    animation: loaderWebsite 1.5s 1s var(--easing) both;
+  }
+  
+  @keyframes loaderName {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes loaderWebsite {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+.menu {
+    width: 100%;
+    height: fit-content;
+    background: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 15px rgba(90, 87, 87, 0.35);
+    border-radius: 2mm;
+    position: relative;
+  }
+  
+  .x {
+    font-weight: bolder;
+    font-size: 50px;
+  }
+  .menu img {
+    width: 140px;
+    margin-left: 20px;
+  }
+  .right {
+    display: flex;
+    align-items: center;
+  }
+  .head {
+    text-decoration: none;
+    font-family: poppins;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    margin: 0 20px;
+  }
+  .head:hover {
+    border-bottom: 0.6mm solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+  }
+  .right button {
+    margin-left: 10px ;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .right button:hover {
+    background: rgb(0, 149, 255);
+    color: rgb(255, 255, 255);
+  }
+  .sub-menu {
+    position: absolute;
+    top: 55px;
+    right: 10px;
+    width: 200px;
+    height: fit-content;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgb(3, 112, 244);
+    border-radius: 2mm;
+    padding: 10px 0;
+    box-shadow: rgba(255, 255, 255, 0.27) 0px 15px 38px,
+      rgba(255, 255, 255, 0.2) 0px 10px 12px;
+  }
+  .option,
+  .sub {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-family: poppins;
+    color: white;
+    font-weight: 500;
+    padding: 10px 0;
+  }
+  .option:hover,
+  .sub:hover {
+    background: white;
+    color: rgb(1, 42, 84);
+  }
+  .sub {
+    display: none;
+  }
+  @media only screen and (max-width: 780px) {
+    .head {
+      display: none;
+    }
+    .sub {
+      display: block;
+    }
+  }
 header {
     width: 100%;
     height: 70%;
