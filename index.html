@@ -7,19 +7,158 @@
     <title>Finance protfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <div class="mLogo">
-        <img class="logo" src="logo-light.png" class="logo">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamburger Menu</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      
+      .menu {
+        width: 100%;
+        height: fit-content;
+        background: rgb(0, 0, 0);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        box-sizing: border-box;
+        box-shadow: 0px 5px 15px rgba(90, 87, 87, 0.35);
+        border-radius: 2mm;
+        position: relative;
+      }
+      .menu img {
+        width: 140px;
+        margin-left: 20px;
+      }
+      .right {
+        display: flex;
+        align-items: center;
+      }
+      .head {
+        text-decoration: none;
+        font-family: poppins;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        margin: 0 20px;
+      }
+      .head:hover {
+        border-bottom: 0.6mm solid rgb(255, 255, 255);
+        color: rgb(255, 255, 255);
+      }
+      .right button {
+        margin-left: 10px ;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgb(255, 255, 255);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .right button:hover {
+        background: rgb(0, 149, 255);
+        color: rgb(255, 255, 255);
+      }
+      .sub-menu {
+        position: absolute;
+        top: 55px;
+        right: 10px;
+        width: 200px;
+        height: fit-content;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: rgb(3, 112, 244);
+        border-radius: 2mm;
+        padding: 10px 0;
+        box-shadow: rgba(255, 255, 255, 0.27) 0px 15px 38px,
+          rgba(255, 255, 255, 0.2) 0px 10px 12px;
+      }
+      .option,
+      .sub {
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        font-family: poppins;
+        color: white;
+        font-weight: 500;
+        padding: 10px 0;
+      }
+      .option:hover,
+      .sub:hover {
+        background: white;
+        color: rgb(1, 42, 84);
+      }
+      .sub {
+        display: none;
+      }
+      @media only screen and (max-width: 450px) {
+        .head {
+          display: none;
+        }
+        .sub {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <img src="logo-light.png" alt="logo" />
+
+      <div class="right">
+        <a href="" class="head">Home</a>
+        <a href="" class="head">About</a>
+        <a href="" class="head">Services</a>
+        <a href="" class="head">Pricing</a>
+        <a href="#" class="primary">Contact</a>
+        
+
+        <button class="toggle">
+          <span class="material-icons"> more_vert </span>
+        </button>
+      </div>
+
+      <div class="sub-menu">
+        <a href="" class="sub">Home</a>
+        <a href="" class="sub">Services</a>
+        <a href="" class="sub">Pricing</a>
+        <a href="" class="option">Shop</a>
+        <a href="" class="option">Events</a>
+        <a href="" class="option">Gallary</a>
+        <a href="" class="option">Settings</a>
+        <a href="" class="option">Logout</a>
+      </div>
     </div>
-        <div class="right">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Portfolio</a>
-            <a href="#" class="primary">Contact</a>
-        </div>
-    </header>
+
+    <script>
+      let subMenu = document.querySelector(".sub-menu");
+
+      window.addEventListener("click", (e) => {
+        if (e.target.closest(".toggle")) {
+          subMenu.style.display = "flex";
+        } else {
+          subMenu.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+<body>
+    
     <div class="hero">
     <div class="hleft">
     <h1>Hello I'm Syed Subhan</h1>
@@ -31,7 +170,7 @@
 </div>
 </div>
 <div class="hright">
-    <img  src="https://i.pinimg.com/564x/38/2d/19/382d19ad35a98956bd5cfdefe3e5db9d.jpg" alt="">
+    <img class="hello" src="https://i.pinimg.com/564x/38/2d/19/382d19ad35a98956bd5cfdefe3e5db9d.jpg" alt="">
 </div>
 </div>
 </body>
