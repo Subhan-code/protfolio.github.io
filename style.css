@@ -90,7 +90,7 @@
     bottom: 0;
     left: 0;
     transform-origin: left center;
-    animation: loadingBar 2s var(--easing) both;
+    animation: loadingBar 4s var(--easing) both;
   }
   
   @keyframes loadingBar {
