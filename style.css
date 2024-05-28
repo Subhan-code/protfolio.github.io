@@ -140,6 +140,10 @@
     }
   }
   
+  .toggle{
+    margin-right: 20px;
+    
+  }
 .menu {
     width: 100%;
     height: fit-content;
@@ -230,6 +234,10 @@
   @media only screen and (max-width: 780px) {
     .head {
       display: none;
+    }
+    .primary{
+        display: none;
+     
     }
     .sub {
       display: block;
@@ -381,6 +389,7 @@ p {
 
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
+    
     .container1 {
         flex-direction: column;
     }
